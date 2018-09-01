@@ -1,0 +1,17 @@
+package br.com.fiap.teste;
+
+import br.com.fiap.dao.ClienteDAO;
+import br.com.fiap.excecao.Excecao;
+
+public class TesteNovoCliente {
+	
+	public static void main(String[] args) {
+		
+		try {
+			ClienteDAO dao new ClienteDAO();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(Excecao.tratarExcecao(e));
+		}
+	}
+}

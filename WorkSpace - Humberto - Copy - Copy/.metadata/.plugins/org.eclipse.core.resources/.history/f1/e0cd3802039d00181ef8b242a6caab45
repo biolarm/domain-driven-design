@@ -1,0 +1,14 @@
+package br.com.fiap.dao;
+
+import java.sql.Connection;
+
+import br.com.fiap.conexao.Conexao;
+
+public class ClienteDAO {
+	
+	private Connection con;
+	
+	public ClienteDAO() throws Exception{
+		con=Conexao.conectar();
+	}
+}

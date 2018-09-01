@@ -1,0 +1,15 @@
+package br.com.fiap.teste;
+
+import br.com.fiap.dao.ProdutoDAO;
+
+public class TesteCadastroProduto {
+
+	public static void main(String[] args) {
+		
+		try {
+			ProdutoDAO dao = new ProdutoDAO();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

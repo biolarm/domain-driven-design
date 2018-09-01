@@ -1,0 +1,26 @@
+package br.com.fiap.teste;
+
+import br.com.fiap.beans.Cliente;
+import br.com.fiap.dao.ClienteDAO;
+import br.com.fiap.excecao.Excecao;
+
+public class TesteApagarPromover {
+
+	public static void main(String[] args) {
+		
+		try {
+			Cliente cliente = new Cliente();
+			ClienteDAO dao = new ClienteDAO(); 
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(Excecao.tratarExcecao(e));
+		} finally {
+			try {
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(Excecao.tratarExcecao(e));
+			}
+		}
+	}
+}

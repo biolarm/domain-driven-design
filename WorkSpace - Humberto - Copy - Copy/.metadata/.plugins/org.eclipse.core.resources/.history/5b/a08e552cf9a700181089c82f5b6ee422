@@ -1,0 +1,17 @@
+package br.com.fiap.bo;
+
+import br.com.fiap.beans.Cliente;
+
+public class ClienteBO {
+	
+	public String novoCliente(Cliente cli) throws Exception {
+		if (cli.getNome().length()>40) {
+			return "Nome Inválido";
+		}
+		if(cli.getQtdeEstrelas()<1 || cli.getQtdeEstrelas()>5) {
+			return "Qtde de estrelas inválidas";
+		}
+		
+		return "";
+	}
+}

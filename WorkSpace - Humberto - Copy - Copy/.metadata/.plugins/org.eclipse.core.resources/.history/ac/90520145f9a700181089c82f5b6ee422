@@ -1,0 +1,25 @@
+package br.com.fiap.bo;
+
+import br.com.fiap.beans.Cliente;
+import br.com.fiap.dao.ClienteDAO;
+
+public class ClienteBO {
+	
+	public String novoCliente(Cliente cli) throws Exception {
+		// validação
+		if (cli.getNome().length()>40) {
+			return "Nome Inválido";
+		}
+		//regra de negócio
+		if(cli.getQtdeEstrelas()<1 || cli.getQtdeEstrelas()>5) {
+			return "Qtde de estrelas inválidas";
+		}
+		//padronização
+		cli.setNome(cli.getNome().toUpperCase());
+		ClienteDAO dao = new ClienteDAO();
+		
+		return dao.gravar(cli);
+		
+	
+	}
+}

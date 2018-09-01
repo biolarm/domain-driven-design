@@ -1,0 +1,25 @@
+package br.com.fiap.teste;
+
+import javax.swing.JOptionPane;
+
+import br.com.fiap.beans.ProdutoBeans;
+import br.com.fiap.dao.ProdutoDAO;
+
+public class TesteCadastroProduto {
+
+	public static void main(String[] args) {
+		
+		try {
+			//Instancianda as Classes necessarias 
+			ProdutoDAO dao = new ProdutoDAO();
+			ProdutoBeans produto = new ProdutoBeans();
+			produto.setCodigoProduto(Integer.parseInt(JOptionPane.showInputDialog("ID: ")));
+			produto.setProduto(JOptionPane.showInputDialog("Descrição: "));
+			produto.setValor(Double.parseDouble(JOptionPane.showInputDialog("Valor: ")));
+			System.out.println(dao.cadastrar(produto));
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

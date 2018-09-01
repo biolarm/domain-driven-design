@@ -1,0 +1,32 @@
+package br.com.fiap.teste;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import br.com.fiap.excecao.Excecao;
+
+public class Conexao {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		try {
+			con = DriverManager.getConnection
+					("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "RM81721", "fiap#2018");
+			System.out.println("Abriu...");
+
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println(Excecao.tratarExcecao(e));
+		}finally {
+			try {
+				con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println(Excecao.tratarExcecao(e));
+			}
+			
+		}
+	
+	}
+
+}

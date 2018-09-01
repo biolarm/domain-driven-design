@@ -1,0 +1,14 @@
+package br.com.fiap.bo;
+
+import br.com.fiap.beans.Cliente;
+
+public class ClienteBO {
+	
+	public String novoCliente(Cliente cli) throws Exception {
+		if (cli.getNome().length()>40) {
+			return "Nome Inválido";
+		}
+		
+		return "";
+	}
+}

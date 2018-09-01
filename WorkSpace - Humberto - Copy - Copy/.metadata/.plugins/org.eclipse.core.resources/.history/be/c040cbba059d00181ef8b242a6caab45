@@ -1,0 +1,24 @@
+package br.com.fiap.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.fiap.beans.Cliente;
+import br.com.fiap.conexao.Conexao;
+
+public class ClienteDAO {
+	
+	private Connection con;
+	
+	public ClienteDAO() throws Exception{
+		con=Conexao.conectar();
+	}
+	
+	public void gravar(Cliente obj) throws Exception{
+		PreparedStatement stmt = con.prepareStatement
+				("INSER INTO T_DDD_ CLIENTE (NM_CLIENTE, NR_CLIENTE, QT_CLIENTE) VALUES (?,?,?))");
+		stmt.setString(1, obj.getNome());
+		stmt.setInt(2, obj.getNumero());
+		stmt.setInt(3, obj.getQtdeEstrelas());
+	}
+}
